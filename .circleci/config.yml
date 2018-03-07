@@ -2,7 +2,11 @@ version: 2
 jobs:
    build:
      docker:
-       - image: circleci/python:LATEST
+       - image: circleci/python:3.6.1
      steps:
        - checkout
        - run: echo "hello world"
+       - run:
+           name: urllib request
+           command: |
+             python test.py
